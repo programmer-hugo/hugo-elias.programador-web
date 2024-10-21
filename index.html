@@ -152,9 +152,55 @@
                 </div>
             </div>
         </section>
+        <section>
+            <div class="container">
+                <title>Formulario a Excel</title>
+                <!-- Incluye la librería SheetJS -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+                <form id="miFormulario">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required><br><br>
 
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="email">Phone:</label>
+                <input type="phone" id="phone" name="phone" required><br><br>
+                    
+                <label for="email">Message:</label>
+                <input type="message" id="message" name="message" required><br><br>
+                    
+                <input type="submit" value="Generar Excel">
+                </form>
+
+                <script>
+                    document.getElementById('miFormulario').addEventListener('submit', function(e) {
+                    e.preventDefault();  // Prevenir el envío del formulario
+
+                    // Obtener los datos del formulario
+                    const nombre = document.getElementById('nombre').value;
+                    const email = document.getElementById('email').value;
+                    const phone = document.getElementById('phone').value;
+                    const message = document.getElementById('message').value;
+
+                    // Crear una hoja de cálculo (workbook)
+                    const wb = XLSX.utils.book_new();  // Crear un nuevo libro de trabajo
+                    const ws_data = [
+                    ['Nombre', 'Email', 'Phone', 'Message'],  // Encabezados
+                    [nombre, email, phone, message]       // Datos del formulario
+                    ];
+
+                    // Convertir los datos a una hoja de cálculo
+                    const ws = XLSX.utils.aoa_to_sheet(ws_data);
+                    XLSX.utils.book_append_sheet(wb, ws, 'Datos');  // Agregar la hoja al libro
+
+                    // Descargar el archivo Excel
+                    XLSX.writeFile(wb, 'datos_formulario.xlsx');
+                    });
+                </script>
+            </div>
+        </section>
     </main>
-
     <footer>
         <div class="container">
             <p>&copy; 2025 Hugo Elias. Todos los Derechos Reservados.</p>
