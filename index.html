@@ -23,6 +23,10 @@
             color: black;
             text-decoration: none;
         }
+        .a2 {
+            color: black;
+            text-decoration: none;
+        }
         section76 {
             display: flex;
             justify-content: center;
@@ -143,7 +147,67 @@
 
         <section class="section1">
             <h2>Sobre mí</h2>
-            <p>Soy un apasionado programador web con 1 mes de experiencia en el desarrollo de aplicaciones web modernas y escalables. Me encanta aprender nuevas tecnologías y enfrentar desafíos técnicos complejos.</p>
+            <p>Soy un apasionado programador web con <a class="a2" id="link" href="#">meses de experiencia</a> de experiencia en el desarrollo de aplicaciones web modernas y escalables. Me encanta aprender nuevas tecnologías y enfrentar desafíos técnicos complejos.</p>
+            <script>
+                // Fecha predeterminada (puedes cambiarla a la fecha que desees)
+                const fechaInicial = new Date('2023-11-01'); 
+                
+                // Función para calcular los años y meses pasados desde una fecha dada
+                function calcularTiempoPasado(fecha) {
+                    const fechaActual = new Date();
+                    let anios = fechaActual.getFullYear() - fecha.getFullYear();
+                    let meses = fechaActual.getMonth() - fecha.getMonth();
+                
+                    // Ajustar años y meses si el mes actual es menor que el mes de la fecha inicial
+                    if (meses < 0) {
+                        anios--;
+                        meses += 12;
+                    }
+                    return { anios, meses };
+                }
+
+                // Cambiar el texto del enlace según el tiempo pasado
+                function actualizarTextoEnlace() {
+                    const { anios, meses } = calcularTiempoPasado(fechaInicial);
+                    const link = document.getElementById('link');
+                    
+                    // Cambia el texto del enlace en función de los años y meses pasados
+                    if (anios === 0 && meses < 2) {
+                        link.textContent = `menos de 1 mes`;
+                    } else if (anios === 0 && meses == 2) {
+                        link.textContent = `más de 1 mes`;
+                    } else if (anios === 0 && meses == 3) {
+                        link.textContent = `más de 2 meses`;
+                    } else if (anios === 0 && meses == 4) {
+                        link.textContent = `más de 3 meses`;
+                    } else if (anios === 0 && meses == 5) {
+                        link.textContent = `más de 4 meses`;
+                    } else if (anios === 0 && meses == 6) {
+                        link.textContent = `más de 5 meses`;
+                    } else if (anios === 0 && meses == 7) {
+                        link.textContent = `más de 6 meses`;
+                    } else if (anios === 0 && meses == 8) {
+                        link.textContent = `más de 7 meses`;
+                    } else if (anios === 0 && meses == 9) {
+                        link.textContent = `más de 8 meses`;
+                    } else if (anios === 0 && meses == 10) {
+                        link.textContent = `más de 9 meses`;
+                    } else if (anios === 0 && meses == 11) {
+                        link.textContent = `más de 10 meses`;
+                    } else if (anios === 1 && meses === 0) {
+                        link.textContent = `1 año`;
+                    } else if (anios > 1 && meses === 0) {
+                        link.textContent = `${anios} año`;
+                    } else if (anios >= 1 && meses === 1) {
+                        link.textContent = `${anios} año`;
+                    } else if (anios >= 1 && meses === 2) {
+                        link.textContent = `${anios} años y ${meses} meses`;
+                    }
+                }
+
+                // Llamamos a la función para actualizar el texto al cargar la página
+                actualizarTextoEnlace();
+            </script>
         </section>
 
         <section class="section2">
@@ -178,7 +242,7 @@
             <h2>Contacto</h2>
             <ul>
                 <li><a class="a1" href="mailto:hugo.elias.business@gmail.com">Email: hugo.elias.business@gmail.com</a></li>
-                <li><a class="a1" href="https://github.com/programmer-hugo">GitHub: programmer-hugo</a></li>
+                <li><a  class="a1" href="https://github.com/programmer-hugo">GitHub: programmer-hugo</a></li>
                 <li><a class="a1" href="https://www.instagram.com/hugo.programmer.account/?next=%2F">Instagram: hugo.programmer.account</a></li>
             </ul>
         </section>
