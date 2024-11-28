@@ -16,7 +16,12 @@
             background-color: rgb(97, 0, 0);
             color: white;
             text-align: center;
-            padding: 1em;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
         }
         .a1 {
             font-weight: bold;
@@ -41,10 +46,12 @@
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
         }
         h1 {
             margin-bottom: 0;
+        }
+        h3 {
+            gap: 5px; /* Espacio entre el logo y el texto */  
         }
         /* Estilos de la sección del footer */
         .footer-content {
@@ -84,6 +91,7 @@
             margin-bottom: 10px;
         }
         .skill {
+            width: 800px;
             display: inline-block;
             background-color: #8c3030;
             color: #dbdbdb;
@@ -122,11 +130,18 @@
             background-color: #8c3030;
             color: #dbdbdb;
             font-weight: bold;
-            text-align: ;
+            width: 800px;
+            align-items: center;
             padding: 5px 10px;
             border-radius: 3px;
             margin-right: 5px;
             margin-bottom: 5px;
+        }
+        .logo-p {
+            width: 50px;
+            height: 50px;
+            border-radius: 12.5%;
+            gap: 5px; /* Espacio entre el logo y el texto */
         }
         footer {
             background-color: #f4f4f4;
@@ -134,20 +149,170 @@
             padding: 1rem 0;
             margin-top: 2rem;
         }
+        .logo {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: ;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex; /* Alinear horizontalmente en pantallas grandes */
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ff0000;
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+        }
+        .hamburger-line {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px 0;
+            transition: all 0.3s ease-in-out;
+        }
+        .hability-line-1 {
+            display: block;
+            width: 60%;
+            height: 3px;
+            background-color: #ff0000;
+            margin: 5px 0;
+            transition: all 0.3s ease-in-out;
+        }
+        .hability-line-2 {
+            display: block;
+            width: 83%;
+            height: 3px;
+            background-color: #ff0000;
+            margin: 5px 0;
+            transition: all 0.3s ease-in-out;
+        }
+        .hability-line-3 {
+            display: block;
+            width: 12%;
+            height: 3px;
+            background-color: #ff0000;
+            margin: 5px 0;
+            transition: all 0.3s ease-in-out;
+        }
+        @media (max-width: 768px) {
+            .format01 {
+                width: auto;
+            }
+            .skill {
+                width: 8.8cm;
+            }
+            .a2{
+                display: none;
+                /*none = no mostrar | block = mostrar*/
+            }
+            .hamburger {
+                display: block;
+            }
+            .nav-links1 {
+                list-style: none;
+                display: list-item;
+            }
+            .nav-links1 li {
+                margin-left: 1.5rem;
+                margin-top: 0.5rem;
+            }
+            .nav-links1 a {
+                color: #fff;
+                text-decoration: none;
+                transition: color 0.3s ease;
+                border-left: 2px solid rgb(129, 129, 129);
+                padding-left: 5px;
+            }
+            .nav-links1 a:hover {
+                color: #ffd700;
+                border-left: 2px solid #ffd700;
+                padding-left: 5px;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100px;
+                left: 0;
+                width: 100%;
+                background-color: rgb(97, 0, 0);
+                padding: 1rem;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            .hamburger.active .hamburger-line:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            .hamburger.active .hamburger-line:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active .hamburger-line:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+            .nav-links {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Hugo Elias</h1>
-        <p class="subtitle">Programador Web</p>
+        <nav class="container">
+            <div class="logo">
+                <h1>Hugo Elias</h1>
+                <p class="subtitle">Programador Web</p>
+            </div>
+            <button class="hamburger" aria-label="Menú de navegación">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="https://programmer-hugo.github.io/hugo-elias.programador web/inicio/">Inicio</a></li>
+                <li><a href="https://programmer-hugo.github.io/hugo-elias.programador web/proyectos/">Proyectos</a></li>
+                <li><a href="https://programmer-hugo.github.io/hugo-elias.programador web/contacto/">Contacto | Negociaciones</a></li>
+            </ul>
+        </nav>
+      
     </header>
-
     <main>
         <img src="th.jpg" alt="Perfil de Hugo" class="profile-image">
 
         <section class="section1">
             <h2>Sobre mí</h2>
             <p>Soy un apasionado programador web con <a class="a2" id="link" target="_blank" href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=MHZmdnNlNWE5MGNoY2FmNjRnM3FkMHZodXYgaHVnby5lbGlhcy5idXNpbmVzc0Bt&amp;tmsrc=hugo.elias.business%40gmail.com">>meses de experiencia</a> de experiencia en el desarrollo de aplicaciones web modernas y escalables. Me encanta aprender nuevas tecnologías y enfrentar desafíos técnicos complejos.</p>
+            <!-- Srcipt para actualizar automáticamente el tiempo de experiencia -->
             <script>
                 // Fecha predeterminada (puedes cambiarla a la fecha que desees)
                 const fechaInicial = new Date('2024-09-01'); 
@@ -213,7 +378,9 @@
         <section class="section2">
             <h2>Habilidades</h2>
             <ul>
-                <li><span class="skill">HTML5</span> <span class="skill">CSS3</span> <span class="skill">JavaScript</span></li>
+                <li><span class="skill">HTML 5 - 60%<span class="hability-line-1"></span></li>
+                <li><span class="skill">CSS 3 - 83%<span class="hability-line-2"></span></li>
+                <li><span class="skill">JavaScript - 12%<span class="hability-line-3"></span></li>
             </ul>
         </section>
 
@@ -221,29 +388,19 @@
             <h2>Experiencia</h2>
             <ul>
                 <li class="format01">
-                    <h3>Desarrollador Junior - ASL-Shop | 2024 - Presente</h3>
+                    <div class="container footer-content">
+                        <img src="https://programmer-hugo.github.io/asl-shop/ASL-Shop.png" class="logo-p" alt="LOGO">
+                        <h3>Desarrollador Junior || &copy; ASL-Shop || 22-10-2024</h3>
+                    </div>
                     <p>Hicé yo solo el desarrollo de una aplicación web de comercio en línea utilizando HTML y CSS.</p>
                 </li>
-            </ul>
-        </section>
-
-        <section class="section3">
-            <h2>Proyectos</h2>
-            <section class="section76">
-                <ul>
-                    <li class="format01">
-                        <a href="https://programmer-hugo.github.io/sobre-mi/proyectos/" class="cta-button">VER PROYECTOS</a>
-                    </li>
-                </ul>
-            </section>
-        </section>
-
-        <section>
-            <h2>Contacto</h2>
-            <ul>
-                <li><a class="a1" href="mailto:hugo.elias.business@gmail.com" target="_blank">Email: hugo.elias.business@gmail.com</a></li>
-                <li><a class="a1" href="https://github.com/programmer-hugo" target="_blank">GitHub: programmer-hugo</a></li>
-                <li><a class="a1" href="https://www.instagram.com/hugo.programmer.account/?next=%2F" target="_blank">Instagram: hugo.programmer.account</a></li>
+                <li class="format01">
+                    <div class="container footer-content">
+                        <img src="https://abogados-elias-y-pena.github.io/Image2/logo.png" class="logo-p" alt="LOGO">
+                        <h3>Desarrollador Junior || &copy; Elias & Peña | Abogados || 07-10-2024</h3>
+                    </div>
+                    <p>Hicé yo con un poco de ayuda de &copy;ChatGPT el desarrollo de una aplicación web de soluciones legales en línea utilizando HTML, CSS y JavaScript(js).</p>
+                </li>
             </ul>
         </section>
     </main>
@@ -253,5 +410,28 @@
             <p>&copy; 2025 Programmer Hugo. Todos los Derechos Reservados.</p>
         </div>
     </footer>
+  
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('show');
+            });
+
+            // Close menu when a link is clicked
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('show');
+                });
+            });
+        });
+    </script>
+  <!-- Formato de versión V<N° 1-9>.<N°1-99>.<Año> -->
+  <!-- Format version V<N° 1-9>.<N°1-99>.<Year> -->
+                 <!-- V1.58.2024 -->
 </body>
 </html>
