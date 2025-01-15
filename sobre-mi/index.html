@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programmer Hugo | Inicio</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <meta http-equiv="refresh" content="5;url=file:///C:/Users/elias/Downloads/hugo-elias.programador-web-main\sobre-mi\index.html">
-    <!-- --------------------------------------------------------------------------------------------------------- -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -79,19 +74,6 @@
             height: 200px;
             border-radius: 50%;
             margin: 20px auto;
-            display: block;
-        }
-        .profile-image-logo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-
-            display: block;
-        }
-        .x {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
             display: block;
         }
         .logo-image {
@@ -258,20 +240,9 @@
         }
         iframe {
             background-color: white;
-            border: 1px solid rgb(255, 255, 255);
+            border: 1px solid rgb(56, 56, 56);
             width: 100%;
-            height: 250px;
-        }
-        .p2 {
-            font-family: "Bebas Neue", serif;
-            font-weight: 400;
-            font-style: normal;
-            font-size: medium;
-        }
-        .team {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            height: 300px;
         }
         @media (max-width: 768px) {
             .span1 {
@@ -369,8 +340,69 @@
         <img src="logo.png" alt="Perfil de Hugo" class="profile-image">
   
         <section class="section1">
-            <h2>¿Qué hago?</h2>
-            <p>Diseño Web con HTML, CSS y JS.</p>
+            <h2>Sobre mí</h2>
+            <p>Soy un apasionado programador web con <a class="a2" id="link" target="_blank" href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=MHZmdnNlNWE5MGNoY2FmNjRnM3FkMHZodXYgaHVnby5lbGlhcy5idXNpbmVzc0Bt&amp;tmsrc=hugo.elias.business%40gmail.com">>meses de experiencia</a> de experiencia en el desarrollo de aplicaciones web modernas y escalables. Me encanta aprender nuevas tecnologías y enfrentar desafíos técnicos complejos.</p>
+            <!-- Srcipt para actualizar automáticamente el tiempo de experiencia -->
+            <script>
+                // Fecha predeterminada (puedes cambiarla a la fecha que desees)
+                const fechaInicial = new Date('2024-09-01'); 
+                
+                // Función para calcular los años y meses pasados desde una fecha dada
+                function calcularTiempoPasado(fecha) {
+                    const fechaActual = new Date();
+                    let anios = fechaActual.getFullYear() - fecha.getFullYear();
+                    let meses = fechaActual.getMonth() - fecha.getMonth();
+                
+                    // Ajustar años y meses si el mes actual es menor que el mes de la fecha inicial
+                    if (meses < 0) {
+                        anios--;
+                        meses += 12;
+                    }
+                    return { anios, meses };
+                }
+
+                // Cambiar el texto del enlace según el tiempo pasado
+                function actualizarTextoEnlace() {
+                    const { anios, meses } = calcularTiempoPasado(fechaInicial);
+                    const link = document.getElementById('link');
+                    
+                    // Cambia el texto del enlace en función de los años y meses pasados
+                    if (anios === 0 && meses < 2) {
+                        link.textContent = `menos de 1 mes`;
+                    } else if (anios === 0 && meses == 2) {
+                        link.textContent = `más de 1 mes`;
+                    } else if (anios === 0 && meses == 3) {
+                        link.textContent = `más de 2 meses`;
+                    } else if (anios === 0 && meses == 4) {
+                        link.textContent = `más de 3 meses`;
+                    } else if (anios === 0 && meses == 5) {
+                        link.textContent = `más de 4 meses`;
+                    } else if (anios === 0 && meses == 6) {
+                        link.textContent = `más de 5 meses`;
+                    } else if (anios === 0 && meses == 7) {
+                        link.textContent = `más de 6 meses`;
+                    } else if (anios === 0 && meses == 8) {
+                        link.textContent = `más de 7 meses`;
+                    } else if (anios === 0 && meses == 9) {
+                        link.textContent = `más de 8 meses`;
+                    } else if (anios === 0 && meses == 10) {
+                        link.textContent = `más de 9 meses`;
+                    } else if (anios === 0 && meses == 11) {
+                        link.textContent = `más de 10 meses`;
+                    } else if (anios === 1 && meses === 0) {
+                        link.textContent = `1 año`;
+                    } else if (anios > 1 && meses === 0) {
+                        link.textContent = `${anios} año`;
+                    } else if (anios >= 1 && meses === 1) {
+                        link.textContent = `${anios} año`;
+                    } else if (anios >= 1 && meses === 2) {
+                        link.textContent = `${anios} años y ${meses} meses`;
+                    }
+                }
+
+                // Llamamos a la función para actualizar el texto al cargar la página
+                actualizarTextoEnlace();
+            </script>
         </section>
 
         <section class="section2">
@@ -383,29 +415,23 @@
         </section>
 
         <section class="section3">
-            <h2>Trabajado para:</h2>
+            <h2>Experiencia</h2>
             <ul>
                 <li class="format01">
                     <div class="container footer-content">
-                        <img src="https://asl-shop.github.io/inicio/ASL%20Shop.jpg" class="logo-p" alt="LOGO">
-                        <h3>&copy; ASL-Shop || Lanzamiento oficial: 1-03-2025</h3>
+                        <img src="https://asl-shop.github.io/inicio/ASL&20Shop.png" class="logo-p" alt="LOGO">
+                        <h3>Desarrollador Junior || &copy; ASL-Shop || Lanzamiento oficial: 1-03-2025</h3>
                     </div>
+                    <p>Remodelando con HTML, CSS y JavaScript (js)</p>
                 </li>
                 <li class="format01">
                     <div class="container footer-content">
                         <img src="https://abogados-elias-y-pena.github.io/Image2/logo.png" class="logo-p" alt="LOGO">
-                        <h3>&copy; Elias & Peña | Abogados || Lanzado NO oficial: 07-10-2024 -- Lanzamiento Oficial: 1-05-2025 o 1-06-2025</h3>
+                        <h3>Desarrollador Junior || &copy; Elias & Peña | Abogados || Lanzado NO oficial: 07-10-2024 -- Lanzamiento Oficial: 1-05-2025 o 1-06-2025</h3>
                     </div>
+                    <p>Hicé yo con un poco de ayuda de &copy;ChatGPT el desarrollo de una aplicación web de soluciones legales en línea utilizando HTML, CSS y JavaScript (js). Falta información, no se recomienda visitarla aún.</p>
                 </li>
             </ul>
-        </section>
-
-        <section>
-            <h2>Mi Equipo</h2>
-            <iframe src="https://programmer-hugo.github.io/hugo-elias.programador-web/01/" title="Mi Equipo"></iframe>
-            <div class="team">
-                <p class="p2">Estamos formando un equipo de programadores web, espérala pronto!</p>
-            </div>
         </section>
     </main>
     <footer>
