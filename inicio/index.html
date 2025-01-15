@@ -273,6 +273,19 @@
             justify-content: center;
             align-items: center;
         }
+        footer a {
+            position: absolute;
+            bottom: 10px; /* Distancia desde la parte inferior */
+            left: 10px;  /* Distancia desde la parte izquierda */
+            text-decoration: none;
+            color:rgb(0, 0, 0); /* Color del enlace */
+            font-size: 14px; /* Tamaño del texto */
+            transition-duration: 1s;
+        }
+        footer a:hover {
+            color:rgb(63, 63, 63); /* Color del enlace */
+            font-size: 16px; /* Tamaño del texto */
+        }
         @media (max-width: 768px) {
             .span1 {
                 display: none;
@@ -359,7 +372,6 @@
                 <li><a href="https://programmer-hugo.github.io/hugo-elias.programador-web/sobre-mi/">Sobre mí</a></li>
                 <li><a href="https://programmer-hugo.github.io/hugo-elias.programador-web/contacto/">Contacto</a></li>
                 <li><a href="https://dev-bit-oficial.github.io/programadores-web/inicio/">Mi Equipo</a></li>
-                <li><a href="https://n9.cl/programmer-hugo_">Ø</a></li>
             </ul>
         </nav>
       
@@ -409,6 +421,7 @@
         </section>
     </main>
     <footer>
+        <a href="https://n9.cl/programmer-hugo_">Ø</a>
         <div class="container footer-content">
             <img src="logo.png" alt="LOGO" class="logo-image">
             <p>&copy; 2025 Programmer Hugo. Todos los Derechos Reservados.</p>
