@@ -286,6 +286,14 @@
             color:rgb(63, 63, 63); /* Color del enlace */
             font-size: 16px; /* Tamaño del texto */
         }
+        #team {
+            display: block;
+        }
+        @media (max-width: 529px) {
+            #team {
+                display: none;
+            }
+        }
         @media (max-width: 768px) {
             .span1 {
                 display: none;
@@ -382,7 +390,7 @@
   
         <section class="section1">
             <h2>¿Qué hago?</h2>
-            <p>Diseño Web con HTML, CSS y JS.</p>
+            <p>Programo en los leguajes de HTML y CSS, también vendo páginas web básicas y de nivel medio.</p>
         </section>
 
         <section class="section2">
@@ -390,17 +398,23 @@
             <ul>
                 <li><span class="skill">HTML 5 - 80%<span class="hability-line"><span class="hability-line-1"></span></span></li>
                 <li><span class="skill">CSS 3 - 83%<span class="hability-line"><span class="hability-line-2"></span></span></li>
-                <li><span class="skill">JavaScript - 02%<span class="hability-line"><span class="hability-line-3"></span></span></li>
+                <li><span class="skill">JavaScript - 2%<span class="hability-line"><span class="hability-line-3"></span></span></li>
             </ul>
         </section>
 
         <section class="section3">
-            <h2>Trabajado para:</h2>
+            <h2>He trabajado con:</h2>
             <ul>
+                <li class="format01" style="display: none;">
+                    <div class="container footer-content">
+                        <img src="https://asl-shop.github.io/inicio/ASL%20Shop%20Cutted.png" class="logo-p" alt="LOGO">
+                        <h3>&copy; ASL-Shop || Lanzamiento oficial: 1-03-2025</h3>
+                    </div>
+                </li>
                 <li class="format01">
                     <div class="container footer-content">
-                        <img src="https://asl-shop.github.io/inicio/ASL%20Shop.jpg" class="logo-p" alt="LOGO">
-                        <h3>&copy; ASL-Shop || Lanzamiento oficial: 1-03-2025</h3>
+                        <img src="https://dev-bit-oficial-with-programmer-hugo.github.io/ERROR/404/logo.png" class="logo-p" alt="LOGO">
+                        <h3>&copy; DevBit | Programadores Web || Lanzamiento Oficial: 1-04-2025 o 1-05-2025</h3>
                     </div>
                 </li>
                 <li class="format01">
@@ -412,7 +426,7 @@
             </ul>
         </section>
 
-        <section>
+        <section id="team">
             <h2>Mi Equipo</h2>
             <iframe src="https://programmer-hugo.github.io/hugo-elias.programador-web/01/" title="Mi Equipo"></iframe>
             <div class="team">
@@ -449,6 +463,6 @@
     </script>
   <!-- Formato de versión V<N° 1-9>.<N°1-99>.<N°0-9 de edición> -->
   <!-- Format version V<N° 1-9>.<N°1-99>.<N°0-9 of edition> -->
-                 <!-- V1.01.0 -->
+                 <!-- V1.01.1 -->
 </body>
 </html>
